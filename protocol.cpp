@@ -26,4 +26,16 @@ namespace hwo_protocol
 		return make_request("joinRace", data);
 	}
 
+	jsoncons::json make_join(const std::string& name, const std::string& key, const std::string& raceName, const int numPlayers)
+	{
+		jsoncons::json data;
+		jsoncons::json botId;
+		botId["name"] = name;
+		botId["key"] = key;
+		data["botId"] = botId;
+		data["raceName"] = raceName;
+		data["numPlayers"] = numPlayers;
+		return make_request("joinRace", data);
+	}
+
 }  // namespace hwo_protocol
