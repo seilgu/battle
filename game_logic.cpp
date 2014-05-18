@@ -8,7 +8,12 @@ using namespace hwo_protocol;
 
 game_logic::game_logic() : action_map {
 	{ "gameInit", &game_logic::on_game_init }, 
+	{ "ping", &game_logic::on_ping }, 
 }{}
+
+game_logic::msg_vector game_logic::on_ping(const jsoncons::json& data) {
+	return { make_ping() };
+}
 
 game_logic::msg_vector game_logic::on_game_init(const jsoncons::json& data) {
 	return { jsoncons::null_type() };

@@ -21,6 +21,7 @@ private:
 	const std::map<std::string, action_fun> action_map;
 
 	msg_vector on_game_init(const jsoncons::json& data);
+	msg_vector on_ping(const jsoncons::json& data);
 
 	msg_vector get_action();
 };
